@@ -12,9 +12,26 @@ public class Main {
         Horse[] horse = new Horse[3];
         int countDog = 0;
         int pussy = 0;
+        int ka = 0;
         while (true) {
             System.out.println("add cat-> 1" + "\n" + "add dog-> 2" + "\n" + "add horse-> 3");
             int temp = in.nextInt();
+            if (temp==3){
+                for (int i = 0; i < horse.length; i++) {
+                    ka++;
+                    System.out.println("Horse: "+ka);
+                    System.out.print("name: ");
+                    String name = in1.nextLine();
+                    System.out.print("color: ");
+                    String color = in2.nextLine();
+                    System.out.print("age: ");
+                    int age = in3.nextInt();
+                    horse[i] = horse(name, color, age);
+                }
+                for (Horse horse1 : horse) {
+                    System.out.println(horse1);
+                }
+            }
             if (temp == 1) {
                 for (int i = 0; i < cat.length; i++) {
                     pussy++;
@@ -60,6 +77,10 @@ public class Main {
     public static Cat cat(String name, String color, int age) {
         return new Cat(name, age, color);
     }
+    public static Horse horse(String name,String color,int age){
+        return new Horse(name,color,age);
+    }
+
 
 }
 
